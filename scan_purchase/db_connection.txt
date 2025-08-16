@@ -1,1 +1,0 @@
-Data Source=garimadb.reckonerp.online,5051;Initial Catalog=GM_StockView;UID=sa;Password=RI@123I@#FJE;Integrated Security=False
