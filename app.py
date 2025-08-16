@@ -202,12 +202,8 @@ def submit_grn():
 # --- START OF CHANGES ---
 # This is the only part that has been modified.
 
-if __name__ == '__main__':
-    # No need to generate cert.pem or key.pem files!
-    # Flask will create a temporary certificate for you automatically.
-    app.run(
-        host='0.0.0.0',
-        port=5050,
-        ssl_context='adhoc'  # <-- THIS IS THE NEW, EASIER LINE
-    )
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)  # don't set ssl_context
+
+
 # --- END OF CHANGES ---
