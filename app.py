@@ -3,20 +3,19 @@ import pyodbc
 
 app = Flask(__name__)
 
-# Read your connection string from text file (same as VB.NET)
-def get_db_connection():
-    return pytds.connect(
-        server="garimadb.reckonerp.online,5051",
-        database="GM_StockView",
-        user="sa",
-        password="RI@123I@#FJE"
-    )
-
-
-
+# ✅ Define connection string here (before functions use it)
+CONNECTION_STRING = (
+    "DRIVER={ODBC Driver 17 for SQL Server};"
+    "SERVER=garimadb.reckonerp.online,5051;"
+    "DATABASE=GM_StockView;"
+    "UID=sa;"
+    "PWD=RI@123I@#FJE;"
+    "TrustServerCertificate=yes;"
+)
 
 def get_db_connection():
     return pyodbc.connect(CONNECTION_STRING)
+
 
 @app.route('/')
 def index():
@@ -207,4 +206,5 @@ if __name__ == "__main__":
 
 
 # --- END OF CHANGES ---
+
 
